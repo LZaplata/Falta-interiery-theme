@@ -53,7 +53,9 @@ fields:
         label: Popis
         type: textarea
         size: large
+        column: false
     images:
         label: Obrázky
         type: fileupload
         fileTypes: png,jpg,jpeg,webp
+        column: false
