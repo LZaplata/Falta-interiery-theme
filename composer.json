@@ -1,0 +1,8 @@
+{
+    "name": "lzaplata/faltainteriery-theme",
+    "type": "october-theme",
+    "description": "Theme for Falta interior design company.",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

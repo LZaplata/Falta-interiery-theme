@@ -1,0 +1,38 @@
+items:
+    -
+        title: Výroba
+        type: url
+        url: '#vyroba'
+        code: museums
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Reference
+        type: url
+        url: '#reference'
+        code: infocenters
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'O nás'
+        type: url
+        url: '#o-nas'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Kontakt
+        type: url
+        url: '#kontakt'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Main Menu'

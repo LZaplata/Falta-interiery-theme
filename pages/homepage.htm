@@ -1,0 +1,151 @@
+url = "/"
+layout = "default"
+title = "Úvod"
+
+[collection slider]
+handle = "Slider\Slide"
+
+[global slider_settings]
+handle = "Slider\Settings"
+
+[collection partners]
+handle = "Partners\Partner"
+
+[collection portfolio_categories]
+handle = "Portfolio\Category"
+==
+{% if slider.getIterator().count %}
+    <div class="{#container-fluid#}"> {# uncomment while slider with horizontal margin #}
+        <div class="slider-swiper-wrapper position-relative {#container-fluid#}"> {# uncomment while slider with horizontal margin #}
+            {% partial "_swiper/slider" slides=slider settings=slider_settings %}
+
+            <div class="gradient position-absolute start-0 top-0 w-100 h-100"></div>
+
+            <div class="info position-absolute start-50 translate-middle-x w-100">
+{#                <p class="title fw-bold text-uppercase text-center text-primary fs-2 mb-4">#}
+{#                    Falta interiéry#}
+{#                </p>#}
+
+                <p class="heading h1 fs-1 text-center mb-0">
+                    Truhlářská zakázková <br>
+                    výroba
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% component "quicknews" %}
+
+<div class="container-fluid pt-6 pt-lg-7" id="vyroba">
+    <div class="container-lg">
+        <div class="swiper claim-swiper">
+            <div class="swiper-wrapper">
+                {% for motto in this.theme.mottos %}
+                    <div class="swiper-slide h1 m-0 text-center">
+                        {{ motto.motto }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid portfolio pt-6 pt-lg-7" id="reference">
+    <div class="container-lg">
+        <ul class="nav nav-underline nav-fill position-relative">
+            {% for category in portfolio_categories %}
+                <li class="nav-item">
+                    <a href="#{{ category.slug }}" class="nav-link text-uppercase {% if loop.first %}active{% endif %}" {% if loop.first %}aria-current="page"{% endif %}>
+                        {{ category.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="portfolio-categories d-flex flex-column gap-6 mt-5 gap-lg-7 mt-lg-6 gap-xxl-8">
+            {% for category in portfolio_categories %}
+                <div class="row row-cols-1 row-cols-lg-2 g-lg-5 g-xl-6 g-xxl-8" id="{{ category.slug }}">
+                    <div class="col">
+                        <div class="row row-cols-2 g-3">
+                            {% for image in category.images %}
+                                <div class="{{ loop.first ? 'col-12' : 'col' }}">
+                                    <img src="{{ image.thumb(520, 290, {'mode': 'crop'}) }}" alt="{{ image.description }}" class="img-fluid w-100">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="col mt-4 pt-2 mt-lg-5 pt-lg-0 mt-xl-6 mt-xxl-8 d-flex align-items-center">
+                        <div>
+                            <h2 class="mb-4">
+                                {{ category.title }}
+                            </h2>
+
+{#                            <div class="description mb-3 fs-3">#}
+{#                                {{ category.description }}#}
+{#                            </div>#}
+
+                            <div class="tags mb-3 lh-lg">
+                                {% for tag in category.tags|split(",") %}
+                                    <span class="d-inline-flex align-items-baseline gap-1">
+                                    <i class="ph ph-caret-right"></i>
+
+                                    {{ tag }}
+                                </span>
+                                {% endfor %}
+                            </div>
+
+                            <div class="link">
+                                <a href="{{ 'reference'|page({'slug': category.fullslug}) }}" class="fs-3 link-underline-primary link-underline-opacity-0-hover link-offset-3 transition-base">
+                                    Zobrazit reference
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% partial "contact" %}
+
+<div class="container-fluid bg-primary-100 py-4 py-lg-5 py-xxl-6" id="o-nas">
+    <div class="container-lg">
+        <div class="row row-cols-1 g-4 row-cols-md-2 g-lg-5 g-xxl-6">
+            <div class="col d-md-flex position-relative">
+                <img src="{{ 'assets/images/about.jpg'|theme }}" alt="O nás" class="img-fluid w-100 object-fit-md-cover">
+            </div>
+
+            <div class="col">
+                <h2 class="mb-4">
+                    O nás
+                </h2>
+
+                <div class="fs-3 text-primary-300">
+                    <p>
+                        Na základě živnostenského listu založil Vladimír Falta v roce 1992 truhlářskou firmu. Díky
+                        kvalitní práci a spokojeným zákazníkům se firma krátce po založení rychle rozrostla. Během
+                        dalších let se původní truhlářská dílna rozšířila o několik dalších objektů. V roce 2009
+                        vznikla moderní strojní dílna a později malá přijímací kancelář pro naše klienty i dodavatele.
+                        V roce 2011 jsme přejmenovali firmu na Falta INTERIÉRY. Od roku 2016 začal své truhlářské
+                        dovednosti uplatňovat David Falta, syn pana Vladimíra. Od ledna 2023, již pod vedením pana
+                        Falty mladšího, můžeme hrdě prohlásit, že jsme rodinné truhlářství 2. generace s bohatými
+                        zkušenostmi a více než 30 lety působení na českém trhu. Naše firma se specializuje na kompletní
+                        truhlářskou výrobu a jsme schopni splnit i nejnáročnější požadavky našich zákazníků. Využíváme
+                        moderní technologie i tradiční řemeslné postupy, pravidelně se vzděláváme a sledujeme trendy
+                        v našem oboru.
+                    </p>
+
+                    <p class="mb-0">
+                        Děkujeme našim stálým zákazníkům za projevenou důvěru a spolupráci a těšíme se na další
+                        truhlářské „výzvy“ a zákazníky.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
