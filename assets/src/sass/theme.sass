@@ -30,8 +30,14 @@ header
             top: 50%
             transform: translateY(-50%)
 
-        .title
-            letter-spacing: 4px
+        @include media-breakpoint-only(xl)
+            top: 21%
+
+        .heading
+            letter-spacing: 3px
+
+            @include media-breakpoint-only(xl)
+                font-size: 2.7rem !important
 
 .claim-swiper
     padding-bottom: 50px !important
