@@ -11,8 +11,12 @@
 
     .nav
         &.root
+            margin-top: $offcanvas-nav-margin-top
+
             & > li
                 & > div
+                    justify-content: $offcanvas-nav-item-justify-content
+
                     & > a
                         position: relative
                         color: $offcanvas-nav-link-color
@@ -42,6 +46,7 @@
     .socials
         a
             color: $offcanvas-socials-link-color
+            font-size: $offcanvas-socials-font-size
 
             .icon
                 background-color: $offcanvas-socials-icon-color

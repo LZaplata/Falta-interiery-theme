@@ -91,10 +91,10 @@ handle = "Portfolio\Category"
                             <div class="tags mb-3 lh-lg">
                                 {% for tag in category.tags|split(",") %}
                                     <span class="d-inline-flex align-items-baseline gap-1">
-                                    <i class="ph ph-caret-right"></i>
+                                        <i class="ph ph-caret-right"></i>
 
-                                    {{ tag }}
-                                </span>
+                                        {{ tag|replace({";": ","}) }}
+                                    </span>
                                 {% endfor %}
                             </div>
 

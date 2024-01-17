@@ -236,9 +236,12 @@ $offcanvas-toggler-close-color:         $white;
 $offcanvas-bg-color:                    $primary;
 $offcanvas-socials-icon-color:          $white;
 $offcanvas-socials-link-color:          $white;
+$offcanvas-socials-font-size:           $h2-font-size;
 
+$offcanvas-nav-margin-top:              map-get($spacers, 5);
+$offcanvas-nav-item-justify-content:    center;     // default space-between
 $offcanvas-nav-link-color:              $white;
-$offcanvas-nav-link-font-size:          $h3-font-size;
+$offcanvas-nav-link-font-size:          map-get($font-sizes, 2);
 $offcanvas-nav-link-font-weight:        $font-weight-bold;
 
 $offcanvas-nav-level-1-link-color:          $offcanvas-nav-link-color;

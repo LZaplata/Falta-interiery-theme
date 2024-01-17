@@ -122,4 +122,10 @@ $(document).ready(function () {
 
         $(href).addClass("active show").siblings().removeClass("active show");
     });
+
+    $("#offcanvas .nav li a").click(function (event) {
+        $("#offcanvas").removeClass("show");
+        $(".offcanvas-backdrop").remove();
+        $("body").removeAttr("style");
+    });
 });
