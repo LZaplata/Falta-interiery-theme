@@ -2,7 +2,7 @@
     {% if not item.viewBag.isHidden %}
         <li class="nav-item level-{{ level }} w-100 {{ item.viewBag.cssClass }}">
             <div class="d-flex align-items-center">
-                <a href="{% if item.url %}{{ item.url }}{% else %}#level-{{ level }}-{{ item.title|slug }}{% endif %}" {{ not item.url ? 'data-bs-toggle="collapse"' }} {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative d-inline-flex align-items-center {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
+                <a href="{% if item.url %}{% if item.url starts with '#' %}{{ 'homepage'|page }}/{% endif %}{{ item.url }}{% else %}#level-{{ level }}-{{ item.title|slug }}{% endif %}" {{ not item.url ? 'data-bs-toggle="collapse"' }} {{ item.viewBag.isExternal ? 'target="_blank"' }} class="nav-link position-relative d-inline-flex align-items-center {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'active' : '' }}">
                     {% if level >= 2 %}
                         <i class="ph ph-caret-right me-2 icon"></i>
                     {% endif %}
