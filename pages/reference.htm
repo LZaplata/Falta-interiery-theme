@@ -110,7 +110,17 @@ handle = "Portfolio\Reference"
                                             </div>
                                         {% endif %}
 
-                                        <a href="{{ image.path }}" class="image-link position-absolute start-0 w-100 top-0 h-100" data-external-thumb-image="{{ image.path }}"></a>
+                                        <a href="{{ image.path }}" class="image-link position-absolute start-0 w-100 top-0 h-100" data-external-thumb-image="{{ image.path }}" data-sub-html=".caption">
+                                            <div class="caption d-none">
+                                                <p class="fs-4 text-white">
+                                                    {{ image.title }}
+                                                </p>
+
+                                                <p class="mb-0">
+                                                    {{ image.description }}
+                                                </p>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             {% endfor %}

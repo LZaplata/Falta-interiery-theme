@@ -37,6 +37,7 @@ Array.from(referenceGalleries).forEach(function (gallery) {
         speed: 500,
         galleryId: 1,
         exThumbImage: "data-external-thumb-image",
+        subHtmlSelectorRelative: true,
     });
 });
 
