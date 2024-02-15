@@ -68,7 +68,7 @@ handle = "Portfolio\Category"
                         <div class="row row-cols-2 g-3">
                             {% for image in category.images %}
                                 <div class="{{ loop.first ? 'col-12' : 'col' }}">
-                                    <img src="{{ image.thumb(520, 290, {'mode': 'crop'}) }}" alt="{{ image.description }}" class="img-fluid w-100">
+                                    <img src="{{ image.thumb(800, 446, {'mode': 'crop'}) }}" alt="{{ image.description }}" class="img-fluid w-100">
                                 </div>
                             {% endfor %}
                         </div>
