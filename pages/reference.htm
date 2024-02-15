@@ -76,7 +76,7 @@ handle = "Portfolio\Reference"
             {% for reference in references.whereRelation("categories", "slug", reference_category.slug).get() %}
                 <div class="row row-cols-1 row-cols-lg-2 g-lg-5 g-xl-6 g-xxl-8">
                     <div class="reference col">
-                        <div class="images row row-cols-2 g-3 row-cols-xxl-3" id="reference-images">
+                        <div class="reference-images row row-cols-2 g-3 row-cols-xxl-3">
                             {% for image in reference.images %}
                                 <div class="image {{ loop.first ? 'col-12 col-xxl-12' : 'col' }} {{ loop.index > 3 ? 'd-none d-xxl-flex' }} {{ loop.index > 4 ? 'd-xxl-none' }}">
                                     <div class="position-relative">

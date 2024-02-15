@@ -28,12 +28,16 @@ offcanvasCollapse.addEventListener("hide.bs.collapse", event => {
 
 /*************** END CORE FUNCTION **************/
 
-lightGallery(document.getElementById("reference-images"), {
-    selector: ".image-link",
-    plugins: [lgZoom, lgThumbnail],
-    speed: 500,
-    galleryId: 1,
-    exThumbImage: "data-external-thumb-image",
+var referenceGalleries = document.getElementsByClassName("reference-images");
+
+Array.from(referenceGalleries).forEach(function (gallery) {
+    lightGallery(gallery, {
+        selector: ".image-link",
+        plugins: [lgZoom, lgThumbnail],
+        speed: 500,
+        galleryId: 1,
+        exThumbImage: "data-external-thumb-image",
+    });
 });
 
 var sliderSwiper = new Swiper(".slider-swiper", {
