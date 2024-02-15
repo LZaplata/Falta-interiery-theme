@@ -80,7 +80,7 @@ handle = "Portfolio\Reference"
                             {% for image in reference.images %}
                                 <div class="image {{ loop.first ? 'col-12 col-xxl-12' : 'col' }} {{ loop.index > 3 ? 'd-none d-xxl-flex' }} {{ loop.index > 4 ? 'd-xxl-none' }}">
                                     <div class="position-relative">
-                                        <img src="{{ image.thumb(520, 290, {'mode': 'crop'}) }}" alt="{{ image.description }}" class="img-fluid w-100">
+                                        <img src="{{ image.thumb(800, 446, {'mode': 'crop'}) }}" alt="{{ image.description }}" class="img-fluid w-100">
 
                                         {% if loop.index == 3 %}
                                             <div class="more position-absolute start-0 w-100 top-0 h-100 d-flex align-items-center justify-content-center text-white d-xxl-none">
